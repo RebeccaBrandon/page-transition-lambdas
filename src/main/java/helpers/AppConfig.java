@@ -7,8 +7,24 @@ import java.util.Properties;
 public class AppConfig {
 	public boolean isLoaded = false;
 	Properties properties = new Properties();
-
-	public String getSetting(String settingName) {
+	
+	public int standardPageLoadWait()
+	{
+		return getSettingInt("standardPageLoadWait");
+	}
+	
+	public String googleUrl()
+	{
+		return getSetting("googleUrl");
+	}
+	
+	public String driverPath()
+	{
+		return getSetting("driverPath");
+	}
+	
+	
+	private String getSetting(String settingName) {
 		if (!isLoaded) {
 			try {
 				loadConfig();
@@ -20,7 +36,7 @@ public class AppConfig {
 		return properties.getProperty(settingName);
 	}
 
-	public int getSettingInt(String settingName) {
+	private int getSettingInt(String settingName) {
 		return Integer.parseInt(this.getSetting(settingName));
 	}
 

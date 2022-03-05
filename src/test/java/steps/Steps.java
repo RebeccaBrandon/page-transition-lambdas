@@ -22,7 +22,7 @@ public class Steps {
 	@Given("I load the Google homepage")
 	public void i_open_a_browser() {
 		
-		googleHomePage.goToUrl(appConfig.getSetting("googleUrl"));
+		googleHomePage.goToUrl(appConfig.googleUrl());
 		ArriveOnGoogleHomepageTransition transition = new ArriveOnGoogleHomepageTransition();
 		transition.waitForLoad(googleHomePage, googleHomePagePopup);
 	}

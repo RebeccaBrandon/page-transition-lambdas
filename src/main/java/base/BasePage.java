@@ -43,6 +43,6 @@ public abstract class BasePage implements IBasePage {
 
 	public void waitForLoad() {
 		if (BasePage._driver != null)
-			BasePage._driver.waitForPageLoad(this, appConfig.getSettingInt("standardPageLoadWait"));
+			BasePage._driver.waitForPageLoad(this, appConfig.standardPageLoadWait());
 	}
 }

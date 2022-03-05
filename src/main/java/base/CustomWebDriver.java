@@ -19,7 +19,7 @@ public class CustomWebDriver extends CustomDriver {
 	public void start() {
 		if (_driver == null) {
 			
-			System.setProperty("webdriver.chrome.driver", _appConfig.getSetting("driverPath"));
+			System.setProperty("webdriver.chrome.driver", _appConfig.driverPath());
 			this._driver = new ChromeDriver();
 		}
 
